@@ -39,14 +39,9 @@ observation = [ x, y, z ];
 basename='pentagonal';
 
 np=5;
-dphi=2*pi/np;
-phi0=pi/5;
-X=[];
-for k=1:np
-    X=[X; [ 2*sin(phi0+k*dphi) 2*cos(phi0+k*dphi) 3] ];
-end
-nnodes=size(X,1);
+X=geometryCircularInit(np);
 
+nnodes=np;
 sideShield = 4;
 dist = z - X(1,3);
 
